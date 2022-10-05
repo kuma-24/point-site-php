@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/studys', [StudyPostController::class, 'studyIndex']);
+Route::get('/studys', [StudyPostController::class, 'studyIndex'])
+    ->name('posts.index');
 
-Route::get('/posts/{id}', [StudyPostController::class, 'studyShow']);
+Route::get('/posts/{id}', [StudyPostController::class, 'studyShow'])
+    ->name('posts.show');
