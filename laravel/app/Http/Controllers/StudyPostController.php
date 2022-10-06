@@ -3,26 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\StudyPost;
 
 class StudyPostController extends Controller
 {
-    private $posts = [
-        'Title A',
-        'Title B',
-        'Title C',
-        'Title D',
-        'Title E',
-    ];
-
     public function studyIndex() 
     {
+        $posts = StudyPost::latest()->get();
+
         return view('studys/index')
-            ->with(['posts' => $this->posts]);
+            ->with(['posts' => $posts]);
     }
 
-    public function studyShow($id)
+    public function studyShow(StudyPost $post)
     {
         return view('studys.posts.show')
-            ->with(['post' => $this->posts[$id]]);
+            ->with(['post' => $post]);
     }
 }
