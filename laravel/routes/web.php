@@ -21,5 +21,5 @@ Route::get('/', function () {
 Route::get('/studys', [StudyPostController::class, 'studyIndex'])
     ->name('posts.index');
 
-Route::get('/posts/{id}', [StudyPostController::class, 'studyShow'])
+Route::get('/posts/{post}', [StudyPostController::class, 'studyShow'])
     ->name('posts.show');
