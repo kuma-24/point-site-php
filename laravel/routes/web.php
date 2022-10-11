@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudyPostController;
+use App\Http\Controllers\StudyCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,11 @@ Route::patch('/posts/{post}/update', [StudyPostController::class, 'studyUpdeta']
 Route::delete('/posts/{post}/destroy', [StudyPostController::class, 'studyDestroy'])
     ->name('posts.destroy')
     ->where('post', '[0-9]+');
+
+Route::post('/posts/{post}/comments', [StudyCommentController::class, 'studyStore'])
+    ->name('comments.store')
+    ->where('post', '[0-9]+');
+
+Route::delete('/comments/{comment}/destroy', [StudyCommentController::class, 'studyDestroy'])
+    ->name('comments.destroy')
+    ->where('comment', '[0-9]+');
