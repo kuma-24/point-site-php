@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StudyPost extends Model
+class StudyComment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'study_post_id',
         'body',
     ];
 
-    public function comments() 
+    public function post()
     {
-        return $this->hasMany(StudyComment::class);
+        return $this->belongsTo(StudyPost::class, 'study_post_id');
     }
 }
