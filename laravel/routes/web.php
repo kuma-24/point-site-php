@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudyPostController;
 use App\Http\Controllers\StudyCommentController;
 
@@ -16,9 +18,18 @@ use App\Http\Controllers\StudyCommentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('users/index');
 });
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/users', [HomeController::class, 'index'])
+        ->name('users.index');
+
+    Route::get('/users/show', [HomeController::class, 'show'])
+        ->name('users.show');
+});
+
+// ドットインストールの内容（別ファイルに切り替え予定）
 Route::get('/studys', [StudyPostController::class, 'studyIndex'])
     ->name('posts.index');
     
