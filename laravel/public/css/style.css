@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+.page-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+.page-nav {
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+.page-nav > a {
+  text-decoration: none
+}
+
+.btn {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: normal;
+  cursor: pointer;
+}
