@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StudyComment;
 use App\Models\StudyPost;
+use App\Models\StudyComment;
 use Illuminate\Http\Request;
 
 class StudyCommentController extends Controller
