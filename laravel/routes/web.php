@@ -27,6 +27,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/users/show', [HomeController::class, 'show'])
         ->name('users.show');
+    
+    Route::delete('/users/show/destroy', [HomeController::class, 'destroy'])
+        ->name('users.destroy');
 });
 
 // ドットインストールの内容（別ファイルに切り替え予定）

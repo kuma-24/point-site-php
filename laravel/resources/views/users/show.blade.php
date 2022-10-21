@@ -13,6 +13,11 @@
           @csrf
           <button class="btn">ログアウト</button>
         </form>
+        <form action="{{ route('users.destroy') }}" method="post">
+          @method('DELETE')
+          @csrf
+          <button class="btn">退会</button>
+        </form>
       </div>
     </x-slot>
   </x-slot>

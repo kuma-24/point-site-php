@@ -8,6 +8,7 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
+     * 任意のアプリケーションサービスを登録する。
      *
      * @return void
      */
