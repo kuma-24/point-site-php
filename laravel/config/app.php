@@ -151,6 +151,10 @@ return [
     | The service providers listed here will be automatically loaded on the
     | request to your application. Feel free to add your own services to
     | this array to grant expanded functionality to your applications.
+    | 
+    | ここに掲載されているサービスプロバイダーは、お客様のアプリケーションへのリクエスト時に
+    | 自動的に読み込まれます。この配列に独自のサービスを追加して、アプリケーションに拡張機能を
+    | 付与することも可能です。
     |
     */
 
@@ -194,7 +198,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\FortifyServiceProvider::class, 
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\UserServiceProvider::class,
     ],
 
     /*
@@ -206,10 +211,14 @@ return [
     | is started. However, feel free to register as many as you wish as
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
+    | このクラスエイリアスの配列は、このアプリケーションの起動時に登録されます。
+    | エイリアスは "遅延ロード "されるので、パフォーマンスの妨げになることはありません。
+    |
     */
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        // 'enrollmentCreate' => App\Facades\EnrollmentManagement::class,
     ])->toArray(),
 
 ];

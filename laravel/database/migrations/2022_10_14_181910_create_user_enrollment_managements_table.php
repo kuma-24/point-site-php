@@ -16,13 +16,10 @@ return new class extends Migration
         Schema::create('user_enrollment_managements', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->unique();
+            $table->string('name');
+            $table->string('email');
             $table->text('status');
             $table->timestamps();
-
-            $table
-                ->foreign('user_id')
-                ->references('id')
-                ->on('users');
         });
     }
 

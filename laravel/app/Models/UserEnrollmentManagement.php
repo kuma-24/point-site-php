@@ -14,6 +14,8 @@ class UserEnrollmentManagement extends Model
 
     protected $fillable = [
         'user_id',
+        'name',
+        'email',
         'status',
     ];
 
